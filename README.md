@@ -1,66 +1,88 @@
-# Gemini
+# 🎮 Gemini — Physics-Based Platformer
 
-[Project Gemini](https://github.com/SCCapstone/gemini/wiki) is a platformer game where the room's puzzle are not so much of moving around the 
-area, but having the area being affected around you.
+Welcome to Gemini, a unique platformer game where the challenge lies not in navigating the environment, but in mastering the physics that govern it. Each level introduces a new physical law that players must adapt to, creating innovative gameplay mechanics and mind-bending puzzles.
 
-The way the game is structured is that for every level there is, there is a law of physics that 
-the player must use to move around the area. One room could be the gravity is the equivalent to the moon, 
-or one could be equivalent to Jupiter, thus making jumping impossible, meaning there must be a way to 
-traverse the map without jumping. Other rooms may include, losing the ability to use friction, the platforms 
-moves in the opposite direction the player moves, or even a combination of the previous rooms to add 2 different 
-challenges instead of one. In order to complete this effect, we will be using Godot, with it's 
-nodes functionality to build off each other nodes that causes an effect or an object to appear.
+> 💡 Imagine jumping on the moon, or trying to move without friction - Gemini challenges you to think outside the box!
 
-## External Requirements
+---
 
-In order to build this project you first have to install:
+## 🎯 Purpose
 
--   [Godot](https://godotengine.org/)
--   [Github Desktop](https://desktop.github.com/download/)
+Gemini is designed to challenge players' understanding of physics through gameplay:
+- Each level introduces a unique physical law
+- Players must adapt their movement strategies
+- Combines physics concepts with platformer gameplay
+- Uses Godot's node system for dynamic effects
 
-Windows 10/11 are able to run these
+---
 
-## Setup
+## 🚀 Features
 
-There is no setup necessary for our app. Once you download the files into GoDOT, you are good to go.
+- 🪐 **Physics-Based Levels**
+  - Moon gravity (low gravity)
+  - Jupiter gravity (high gravity)
+  - Zero friction environments
+  - Anti-gravity zones
+  - Platform inversion mechanics
+  - Combined physics challenges
 
-## Running
+- 🎮 **Gameplay**
+  - Intuitive controls
+  - Dynamic level generation
+  - Physics-based puzzles
+  - Multiple difficulty levels
 
-Gemini can be run directly in the GoDOT engine. Once you download the files from the repo into GoDOT, you can click play at the top and play the game.
+- 🎨 **Technical Implementation**
+  - Built with Godot Engine
+  - Node-based architecture
+  - Custom physics effects
+  - Modular level design
 
-# Deployment
+---
 
-Webapps need a deployment section that explains how to get it deployed on the
-Internet. These should be detailed enough so anyone can re-deploy if needed
-. Note that you **do not put passwords in git**.
+## 🛠️ Tech Stack
 
-Mobile apps will also sometimes need some instructions on how to build a
-"release" version, maybe how to sign it, and how to run that binary in an
-emulator or in a physical phone.
+| Tech          | Usage                              |
+|---------------|-------------------------------------|
+| Godot         | Game engine and development platform|
+| GDScript      | Game logic and scripting           |
+| GUT           | Automated testing framework        |
+| Node System   | Dynamic physics effects            |
 
-# Testing
+---
 
-More Automated tests will be written in the coming weeks and will be found in the directories below.
+## ⚙️ How to Run
 
-The unit tests are in `/Tests/Unit`.
+1.  **Prerequisites:**
+    *   Ensure you have the following installed:
+        *   [Godot Engine](https://godotengine.org/) (latest version)
+        *   [GitHub Desktop](https://desktop.github.com/download/) (for version control)
 
-The behavioral tests are in `Tests/Behavior/`.
+2.  **Running the Game:**
+    *   Open the project in Godot Engine
+    *   Click the Play button at the top of the screen
+    *   The game will launch directly in the engine
 
-## Testing Technology
+3.  **Testing:**
+    1. Go to Project → Project Settings → Plugins and enable the GUT plugin
+    2. Click the GUT tab at the bottom of the screen
+    3. Scroll down to Test Directories, click Include Subdirs, and add the tests/ folder
+    4. Select Run All at the top of the GUT tab to execute all tests
 
-Gemini uses the GUT (Godot Unit Test) framework for automated testing within the Godot Engine.
+---
 
-## Running Tests
+## 📄 License
 
-1. Go to Project → Project Settings → Plugins and enable the GUT plugin.
-2. At the bottom of the screen, click the GUT tab
-3. Scroll down to Test Directories, click Include Subdirs, then click the 3 dots and add the tests/ folder.
-4. Finally, select Run All at the top of the GUT tab to execute all tests.
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for details.
 
-# Authors
+---
 
-Bryan Munoz-Romero
-Jordan Wood                jcw43@email.sc.edu
-Scott Prichard
-Waleed Khan
-Harmony
+## 👤 Team
+
+**Project Gemini Team**
+- Bryan Munoz-Romero
+- Jordan Wood (jcw43@email.sc.edu)
+- Scott Prichard
+- Waleed Khan
+- Harmony
