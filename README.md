@@ -82,7 +82,11 @@ See the [LICENSE](LICENSE) file for details.
 
 **Project Gemini Team**
 - Bryan Munoz-Romero
+<<<<<<< HEAD
 - Jordan Wood (jcw43@email.sc.edu)
+=======
+- Jordan Wood [jordancwood2002@gmail.com](mailto:jordancwood2002@gmail.com) || [github.com/okjordanwood](https://github.com/okjordanwood) || [linkedin.com/in/jordan-wood-085274247](https://www.linkedin.com/in/jordan-wood-085274247)
+>>>>>>> 0ba55e7e3a1c966427c56887a297a96574a8ad7c
 - Scott Prichard
 - Waleed Khan
 - Harmony
