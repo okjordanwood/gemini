@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=3 uid="uid://n3suvkuve22y"]
+
+[ext_resource type="PackedScene" uid="uid://bev0eyqglsiam" path="res://scenes/levels/room_manager.tscn" id="1_fojr8"]
+[ext_resource type="PackedScene" uid="uid://jiye2mj4dewk" path="res://scenes/characters/bread_man.tscn" id="2_b0hjs"]
+[ext_resource type="Texture2D" uid="uid://75q41vy7gynn" path="res://assests/tilemaps/sci-fi-tileset.png" id="3_2jbve"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pichm"]
+texture = ExtResource("3_2jbve")
+0:0/0 = 0
+0:0/0/custom_data_0 = 2
+1:0/0 = 0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/custom_data_0 = 1
+2:0/0 = 0
+2:0/0/custom_data_0 = 2
+3:0/0 = 0
+3:0/0/custom_data_0 = 2
+4:0/0 = 0
+4:0/0/custom_data_0 = 2
+5:0/0 = 0
+5:0/0/custom_data_0 = 2
+6:0/0 = 0
+6:0/0/custom_data_0 = 2
+7:0/0 = 0
+7:0/0/custom_data_0 = 2
+0:1/0 = 0
+0:1/0/custom_data_0 = 2
+1:1/0 = 0
+1:1/0/custom_data_0 = 2
+2:1/0 = 0
+2:1/0/custom_data_0 = 2
+3:1/0 = 0
+3:1/0/custom_data_0 = 2
+4:1/0 = 0
+4:1/0/custom_data_0 = 2
+5:1/0 = 0
+5:1/0/custom_data_0 = 2
+7:1/0 = 0
+7:1/0/custom_data_0 = 2
+0:2/0 = 0
+0:2/0/custom_data_0 = 2
+1:2/0 = 0
+1:2/0/custom_data_0 = 2
+2:2/0 = 0
+2:2/0/custom_data_0 = 2
+3:2/0 = 0
+3:2/0/custom_data_0 = 2
+4:2/0 = 0
+4:2/0/custom_data_0 = 2
+5:2/0 = 0
+5:2/0/custom_data_0 = 2
+6:2/0 = 0
+6:2/0/custom_data_0 = 2
+7:2/0 = 0
+7:2/0/custom_data_0 = 2
+0:3/0 = 0
+0:3/0/custom_data_0 = 2
+1:3/0 = 0
+1:3/0/custom_data_0 = 2
+2:3/0 = 0
+2:3/0/custom_data_0 = 2
+3:3/0 = 0
+3:3/0/custom_data_0 = 2
+4:3/0 = 0
+4:3/0/custom_data_0 = 2
+5:3/0 = 0
+5:3/0/custom_data_0 = 2
+6:3/0 = 0
+6:3/0/custom_data_0 = 2
+7:3/0 = 0
+7:3/0/custom_data_0 = 2
+0:4/0 = 0
+0:4/0/custom_data_0 = 2
+1:4/0 = 0
+1:4/0/custom_data_0 = 2
+2:4/0 = 0
+2:4/0/custom_data_0 = 2
+3:4/0 = 0
+3:4/0/custom_data_0 = 2
+4:4/0 = 0
+4:4/0/custom_data_0 = 2
+5:4/0 = 0
+5:4/0/custom_data_0 = 2
+7:4/0 = 0
+7:4/0/custom_data_0 = 2
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/custom_data_0 = 2
+2:5/0 = 0
+2:5/0/custom_data_0 = 2
+3:5/0 = 0
+3:5/0/custom_data_0 = 2
+4:5/0 = 0
+4:5/0/custom_data_0 = 2
+5:5/0 = 0
+5:5/0/custom_data_0 = 2
+6:5/0 = 0
+6:5/0/custom_data_0 = 2
+7:5/0 = 0
+7:5/0/custom_data_0 = 2
+0:6/0 = 0
+0:6/0/custom_data_0 = 2
+1:6/0 = 0
+1:6/0/custom_data_0 = 2
+2:6/0 = 0
+2:6/0/custom_data_0 = 2
+3:6/0 = 0
+3:6/0/custom_data_0 = 2
+4:6/0 = 0
+4:6/0/custom_data_0 = 2
+
+[sub_resource type="TileSet" id="TileSet_3s53g"]
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
+custom_data_layer_0/name = "Terrain"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_pichm")
+
+[node name="RoomManager" node_paths=PackedStringArray("border_tilemap") instance=ExtResource("1_fojr8")]
+Player = ExtResource("2_b0hjs")
+border_tilemap = NodePath("TileMap")
+room_width = null
+room_length = null
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+tile_set = SubResource("TileSet_3s53g")
+format = 2
+layer_0/name = "Ground"

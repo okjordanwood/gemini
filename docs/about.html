@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Team - Gemini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --steam-dark: #1b2838;
+            --steam-darker: #171a21;
+            --steam-blue: #66c0f4;
+            --steam-light: #c7d5e0;
+            --steam-green: #a4d007;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--steam-dark);
+            color: var(--steam-light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--steam-darker);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--steam-blue);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--steam-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--steam-blue);
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin: 40px 0 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .team-intro {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .team-member {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-name {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            color: var(--steam-blue);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .member-bio {
+            margin-bottom: 20px;
+        }
+        
+        .member-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .member-links a {
+            color: var(--steam-light);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .member-links a:hover {
+            color: var(--steam-blue);
+        }
+        
+        .project-info {
+            background-color: rgba(0,0,0,0.2);
+            padding: 30px;
+            border-radius: 5px;
+            margin: 50px 0;
+        }
+        
+        .project-info h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .acknowledgements {
+            margin: 50px 0;
+        }
+        
+        .acknowledgements h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: var(--steam-darker);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--steam-light);
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--steam-blue);
+        }
+        
+        .footer-links a {
+            color: var(--steam-light);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--steam-blue);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">Gemini</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#screenshots">Screenshots</a></li>
+                    <li><a href="index.html#requirements">Requirements</a></li>
+                    <li><a href="about.html">About Team</a></li>
+                    <li><a href="https://github.com/SCCapstone/gemini" target="_blank">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1 class="page-title">Meet The Team</h1>
+        
+        <div class="team-intro">
+            <p>We are a group of passionate developers who came together to create this application. Each team member brings unique skills and expertise to the project, resulting in an game that we're proud to share with you.</p>
+        </div>
+        
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img class="member-photo" src="/api/placeholder/300/300" alt="Team Member 1">
+                <div class="member-info">
+                    <h3 class="member-name">Bryan Munoz-Romero</h3>
+                    <p class="member-role">Manager / Repo Master / Pull Request Reviewer / Game Designer</p>
+                    <p class="member-bio"></p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/bryan-munoz-romero" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/justAStudent2" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:muozromb@email.sc.edu"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img class="member-photo" src="/api/placeholder/300/300" alt="Team Member 2">
+                <div class="member-info">
+                    <h3 class="member-name">Jordan Wood</h3>
+                    <p class="member-role">Editor / Programmer / Pull Request Reviewer</p>
+                    <p class="member-bio"></p>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/jordan-wood-085274247/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/okjordanwood" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:jordancwood2002@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img class="member-photo" src="/api/placeholder/300/300" alt="Team Member 3">
+                <div class="member-info">
+                    <h3 class="member-name">Waleed Khan</h3>
+                    <p class="member-role">Tester</p>
+                    <p class="member-bio"></p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/teammember3" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/waleed3114" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:teammember3@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img class="member-photo" src="/api/placeholder/300/300" alt="Team Member 4">
+                <div class="member-info">
+                    <h3 class="member-name">Scott Prichard</h3>
+                    <p class="member-role">Assets</p>
+                    <p class="member-bio"></p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/teammember4" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/teammember4" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:teammember4@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+		<!-- Team Member 5 -->
+            <div class="team-member">
+                <img class="member-photo" src="/api/placeholder/300/300" alt="Team Member 5">
+                <div class="member-info">
+                    <h3 class="member-name">Harmony</h3>
+                    <p class="member-role">Tester</p>
+                    <p class="member-bio"></p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/teammember5" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/teammember5" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:Wcarhart@email.sc.edu"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-info">
+            <h2>About the Project</h2>
+            <p>This project was developed as part of Capstone Project at University of South Carolina. The goal was to create an application that is a platformer game where the room's puzzle are not so much of moving around the area, but having the area being affected around you.</p>
+            <p>We started development in 9/2024 and released the first version in 4/2025. Since then, we've been continuously improving the app based on user feedback and adding new features.</p>
+            <p>The source code for this project is available on <a href="https://github.com/SCCapstone/gemini" target="_blank" style="color: var(--steam-blue);">GitHub</a>. Feel free to check it out and report issues if you're interested!</p>
+        </div>
+        
+        <div class="acknowledgements">
+            <h2>Acknowledgements</h2>
+            <p>We would like to thank the following people and organizations for their support and contributions to this project:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Our project advisor, Vedal, for guidance and feedback throughout the development process.</li>
+                <li>University of South Carolina for providing the resources and environment to make this project possible.</li>
+                <li>All the beta testers who provided valuable feedback to improve the app.</li>
+                <li>The open-source community for the tools and libraries that made our development process smoother.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github">https://github.com/SCCapstone/gemini</i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Team</a>
+                <a href="https://github.com/SCCapstone/gemini" target="_blank">GitHub</a>
+            </div>
+            <p>&copy; 2025 Gemini Team. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

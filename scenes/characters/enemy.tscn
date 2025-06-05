@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpoxl1oofmqja"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_7e8qj"]
+[ext_resource type="Texture2D" uid="uid://cubfp2gm0i6a4" path="res://assets/Enemy/minigunSprite.png" id="1_hvu1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4vys"]
+size = Vector2(120, 51)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
+motion_mode = 1
+script = ExtResource("1_7e8qj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 1)
+texture = ExtResource("1_hvu1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -0.5)
+shape = SubResource("RectangleShape2D_n4vys")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(619, 0)
+collision_mask = 3
+collide_with_areas = true

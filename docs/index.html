@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --steam-dark: #1b2838;
+        --steam-darker: #171a21;
+        --steam-blue: #66c0f4;
+        --steam-light: #c7d5e0;
+        --steam-green: #a4d007;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--steam-dark);
+        color: var(--steam-light);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background-color: var(--steam-darker);
+        padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--steam-blue);
+        text-decoration: none;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: var(--steam-light);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--steam-blue);
+      }
+
+      .hero {
+        display: flex;
+        margin: 40px 0;
+        gap: 30px;
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      .hero-media {
+        flex: 2;
+      }
+
+      .app-title {
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      .tagline {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: var(--steam-blue);
+      }
+
+      .description {
+        margin-bottom: 30px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--steam-green);
+        color: black;
+        font-weight: bold;
+        padding: 12px 25px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #b6e030;
+      }
+
+      .video-container {
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .screenshots {
+        margin: 40px 0;
+      }
+
+      .screenshot-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .screenshot {
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .screenshot:hover {
+        transform: scale(1.03);
+      }
+
+      .section-title {
+        font-size: 24px;
+        margin: 40px 0 20px;
+        color: white;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--steam-blue);
+      }
+
+      .features {
+        margin: 40px 0;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .feature {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 3px;
+      }
+
+      .feature-title {
+        font-size: 18px;
+        color: var(--steam-blue);
+        margin-bottom: 10px;
+      }
+
+      .feature-icon {
+        margin-right: 10px;
+        color: var(--steam-blue);
+      }
+
+      footer {
+        background-color: var(--steam-darker);
+        padding: 30px 0;
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .social-links {
+        margin: 20px 0;
+      }
+
+      .social-links a {
+        color: var(--steam-light);
+        margin: 0 10px;
+        font-size: 24px;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: var(--steam-blue);
+      }
+
+      .footer-links a {
+        color: var(--steam-light);
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--steam-blue);
+      }
+
+      .specs {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 40px 0;
+      }
+
+      .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .spec-column h3 {
+        color: var(--steam-blue);
+        margin-bottom: 15px;
+      }
+
+      .spec-item {
+        margin-bottom: 10px;
+      }
+
+      .spec-label {
+        font-weight: bold;
+        color: #8f98a0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <a href="index.html" class="logo">Gemini</a>
+        <nav>
+          <ul>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="about.html">About Team</a></li>
+            <li>
+              <a href="https://github.com/SCCapstone/gemini" target="_blank"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="app-title">Gemini</h1>
+          <p class="tagline">
+            Escape the Impossible: Bend the Rules, Break the Limits!
+          </p>
+          <p class="description">
+            Imagine a small little guy, trapped within a facility against their
+            own will. We only have one goal in mind, getting out of the room,
+            but for every room there's always something odd about the room. One
+            minute you manage to make platforms disappear and reappear, the
+            next, you have successfully reverse the polarity of gravity. Can you
+            figure out how to leave every room you come across?
+          </p>
+          <a
+            href="https://github.com/SCCapstone/gemini/releases/tag/v0.9"
+            class="cta-button"
+            >Download Now</a
+          >
+        </div>
+        <div class="hero-media">
+          <div class="video-container">
+            <!-- PoC Demo is placeholder for rn -->
+            <iframe
+              src="https://www.youtube.com/embed/0U4JROJTDQM"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="screenshots" class="screenshots">
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-grid">
+          <img
+            class="screenshot"
+            src="images/level_1.png"
+            alt="App Screenshot 1"
+          />
+          <img
+            class="screenshot"
+            src="images/level_5_1.png"
+            alt="App Screenshot 2"
+          />
+          <img
+            class="screenshot"
+            src="images/level_5_2.png"
+            alt="App Screenshot 3"
+          />
+          <img
+            class="screenshot"
+            src="images/level_5_3.png"
+            alt="App Screenshot 4"
+          />
+          <img
+            class="screenshot"
+            src="images/level_8.png"
+            alt="App Screenshot 5"
+          />
+          <img
+            class="screenshot"
+            src="images/level_11.png"
+            alt="App Screenshot 6"
+          />
+        </div>
+      </section>
+
+      <section id="requirements" class="specs">
+        <h2 class="section-title">System Requirements</h2>
+        <div class="specs-grid">
+          <div class="spec-column">
+            <h3>Minimum</h3>
+            <div class="spec-item">
+              <span class="spec-label">OS:</span> Windows 7 or later / macOS
+              Mojave or later / Ubuntu 18.04+
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Processor:</span> Dual-core 1.6 GHz
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Memory:</span> 2 GB RAM
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">GPU:</span> Integrated graphics (e.g.,
+              Intel HD Graphics 2000 or equivalent)
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Storage:</span> 500 MB available space
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Internet:</span> Broadband connection
+            </div>
+          </div>
+          <div class="spec-column">
+            <h3>Recommended</h3>
+            <div class="spec-item">
+              <span class="spec-label">OS:</span> Windows 10 / macOS Catalina+ /
+              Recent Linux distro
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Processor:</span> Dual-core 2.5 GHz
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Memory:</span> 4 GB RAM
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Storage:</span> 1 GB available space
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Internet:</span> High-speed connection
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Team</a>
+          <a href="https://github.com/SCCapstone/gemini" target="_blank"
+            >GitHub</a
+          >
+        </div>
+        <p>&copy; 2025 Gemini Team. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

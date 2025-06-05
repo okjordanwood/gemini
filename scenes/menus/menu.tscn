@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu38rpppsjfdh"]
+
+[ext_resource type="Script" path="res://scripts/start-menu.gd" id="1_osuqd"]
+[ext_resource type="Texture2D" uid="uid://c5qy3pgv77jbe" path="res://assets/characters/bread_spritesheet.png" id="2_t0ew5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ru37t"]
+font_size = 32
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osuqd")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_right = 94.0
+offset_bottom = 45.0
+grow_horizontal = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "
+
+"
+label_settings = SubResource("LabelSettings_ru37t")
+uppercase = true
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Bread        Man"
+label_settings = SubResource("LabelSettings_ru37t")
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../LevelSelectButton")
+text = "Start"
+
+[node name="TutorialButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../LevelSelectButton")
+text = "Tutorial"
+
+[node name="LevelSelectButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+text = "Level Select"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LevelSelectButton")
+focus_neighbor_bottom = NodePath("../HighScoresButton")
+text = "Settings"
+
+[node name="HighScoresButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+text = "High Scores"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../HighScoresButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "Quit"
+
+[node name="BreadSpritesheet" type="Sprite2D" parent="."]
+position = Vector2(649, 123)
+scale = Vector2(2, 2)
+texture = ExtResource("2_t0ew5")
+region_enabled = true
+region_rect = Rect2(0, 8, 30, 30)
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelectButton" to="." method="_on_LevelSelectButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HighScoresButton" to="." method="_on_high_scores_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

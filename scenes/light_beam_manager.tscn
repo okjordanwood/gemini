@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6peotmgsfqbk"]
+
+[ext_resource type="Script" path="res://scripts/light_beam_manager.gd" id="1_j60wm"]
+
+[node name="LightBeamManager" type="Node2D"]
+script = ExtResource("1_j60wm")

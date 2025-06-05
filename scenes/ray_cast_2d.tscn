@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqtu4wqsit86n"]
+
+[ext_resource type="Script" path="res://scripts/laser_beam.gd" id="1_5ksvl"]
+[ext_resource type="Texture2D" uid="uid://by4mmvl08vqos" path="res://assets/characters/glowing_circle.png" id="2_ktpls"]
+
+[sub_resource type="Curve" id="Curve_ahmrs"]
+_data = [Vector2(0.00558659, 0.996912), 0.0, 0.268896, 0, 0, Vector2(0.027933, 1), 0.0, 0.799335, 0, 0, Vector2(1, 0.0396674), -0.459312, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bqeog"]
+load_path = "res://.godot/imported/glowing_circle.png-8c3ad2462b90b72880b0b069aa5a5058.ctex"
+
+[sub_resource type="Environment" id="Environment_kpyoi"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.5
+glow_hdr_luminance_cap = 2.0
+
+[node name="RayCast2D" type="RayCast2D"]
+target_position = Vector2(1000, 0)
+script = ExtResource("1_5ksvl")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(0.313726, 0.784314, 1, 1)
+
+[node name="CastingParticles" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.3
+texture = ExtResource("2_ktpls")
+gravity = Vector2(0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 120.0
+scale_amount_min = 0.7
+scale_amount_curve = SubResource("Curve_ahmrs")
+
+[node name="CollisionParticles" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.3
+texture = SubResource("CompressedTexture2D_bqeog")
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+scale_amount_min = 0.7
+scale_amount_curve = SubResource("Curve_ahmrs")
+
+[node name="BeamParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 18
+lifetime = 0.3
+texture = SubResource("CompressedTexture2D_bqeog")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+scale_amount_min = 0.7
+scale_amount_curve = SubResource("Curve_ahmrs")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kpyoi")

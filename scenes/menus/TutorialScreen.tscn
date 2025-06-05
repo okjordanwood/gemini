@@ -1,0 +1,129 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmopuurpxtlpc"]
+
+[ext_resource type="Script" path="res://scripts/tutorial_screen.gd" id="1_3lbnp"]
+
+[node name="TutorialScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3lbnp")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 43.0
+offset_right = 722.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 32
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="ContentScroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 141.0
+offset_right = 1248.0
+offset_bottom = 641.0
+horizontal_scroll_mode = 0
+
+[node name="ContentContainer" type="VBoxContainer" parent="ContentScroll"]
+layout_mode = 2
+alignment = 1
+
+[node name="MovementLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "MOVEMENT"
+horizontal_alignment = 1
+
+[node name="MovementDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "Use A and D keys or arrow keys to move your character left and right."
+horizontal_alignment = 1
+
+[node name="JumpingLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "JUMPING"
+horizontal_alignment = 1
+
+[node name="JumpingDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "Press SPACE to jump. You can only jump when standing on solid ground."
+horizontal_alignment = 1
+
+[node name="CollectablesLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "COLLECTABLES"
+horizontal_alignment = 1
+
+[node name="CollectablesDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "There are coins found across the level that give the player points to their score."
+horizontal_alignment = 1
+
+[node name="FasterMovementLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "FASTER MOVEMENT"
+horizontal_alignment = 1
+
+[node name="FasterMovementDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "Some levels implement a method of faster movement for the player. Be careful not to run too fast on these levels."
+horizontal_alignment = 1
+
+[node name="FrictionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "FRICTION"
+horizontal_alignment = 1
+
+[node name="FrictionDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "Some levels implement a method of lessened friction. It will be a lot harder to control your character on these levels."
+horizontal_alignment = 1
+
+[node name="ButtonLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "BUTTON"
+horizontal_alignment = 1
+
+[node name="ButtonDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "Some levels have button that you must activate with your laser ability (next section). These buttons perform various actions that will help the player."
+horizontal_alignment = 1
+
+[node name="LaserLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "LASER"
+horizontal_alignment = 1
+
+[node name="LaserDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "On some levels, the player has the ability to use a laser that shoots from their body. This laser will be quite helpful to the player. Hold 'P' to use the laser"
+horizontal_alignment = 1
+
+[node name="GodModeLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "GOD MODE"
+horizontal_alignment = 1
+
+[node name="GodModeDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "If a level is too hard, or you just want to explore, you can activate god mode by pressing 'G'. You can then click anywhere to instantly teleport to that location."
+horizontal_alignment = 1
+
+[node name="HazardsLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "HAZARDS"
+horizontal_alignment = 1
+
+[node name="HazardsDescriptionLabel" type="Label" parent="ContentScroll/ContentContainer"]
+layout_mode = 2
+text = "There are various hazards found in levels. These could be slime (don't touch), or open pits (don't fall)."
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

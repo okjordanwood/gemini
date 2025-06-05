@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://3ucckxf2jxbm"]
+
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_r72id"]
+[ext_resource type="Texture2D" uid="uid://75q41vy7gynn" path="res://assets/tilemaps/sci-fi-tileset.png" id="1_riklr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8m5n"]
+size = Vector2(47, 8)
+
+[sub_resource type="Animation" id="Animation_rvlyd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bq101"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vkj3d"]
+_data = {
+"RESET": SubResource("Animation_rvlyd"),
+"move": SubResource("Animation_bq101")
+}
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(0, -6)
+script = ExtResource("1_r72id")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(106.763, 0)
+progress = 102.759
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(106.763, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(31.5, 12.2927)
+scale = Vector2(1.14634, 0.195122)
+texture = ExtResource("1_riklr")
+region_enabled = true
+region_rect = Rect2(83.5, 2.25, 41.5, 42.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(31.5, 12)
+shape = SubResource("RectangleShape2D_w8m5n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vkj3d")
+}

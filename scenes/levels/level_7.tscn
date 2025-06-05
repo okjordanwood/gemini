@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://llu48guiurs0"]
+
+[ext_resource type="PackedScene" uid="uid://bxuo8kof1t2sf" path="res://scenes/levels/room_management.tscn" id="1_swyt2"]
+[ext_resource type="PackedScene" uid="uid://b4fvpfjybnyv4" path="res://scenes/levels/helper_for_level_7.tscn" id="2_0i64y"]
+[ext_resource type="PackedScene" uid="uid://bucx0ubg4wk76" path="res://scenes/frictionless_boots.tscn" id="3_8gd6c"]
+
+[node name="TileMap" instance=ExtResource("1_swyt2")]
+player_spawn = Vector2(700, 680)
+gravity = 0.8
+ice_friction = 0.5
+door_position = Vector2(1100, 95)
+
+[node name="TileMap" parent="." index="0" instance=ExtResource("2_0i64y")]
+
+[node name="Area2D" parent="." index="1" instance=ExtResource("3_8gd6c")]
+position = Vector2(699, 675)

@@ -1,0 +1,236 @@
+[gd_scene load_steps=7 format=3 uid="uid://d17hl7dmat2xi"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_fkf0y"]
+[ext_resource type="Texture2D" uid="uid://gj5hp84os7n8" path="res://assets/characters/Heart.png" id="2_25ioh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4osbc"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.752941)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph7vy"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.901961)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eykcc"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.901961)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uw5gy"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[node name="GameHUD" type="CanvasLayer"]
+process_mode = 3
+process_priority = 3
+layer = 100
+script = ExtResource("1_fkf0y")
+
+[node name="TopBar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 48)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4osbc")
+
+[node name="TimeContainer" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TimeLabel" type="Label" parent="TopBar/TimeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Time: 0.0s"
+vertical_alignment = 1
+
+[node name="ScoreContainer" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="TopBar/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SCORE: "
+vertical_alignment = 1
+
+[node name="ScoreCounter" type="Label" parent="TopBar/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+vertical_alignment = 1
+
+[node name="LevelContainer" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="LevelLabel" type="Label" parent="TopBar/LevelContainer"]
+layout_mode = 2
+
+[node name="LevelName" type="Label" parent="TopBar/LevelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TopBar/LevelContainer"]
+layout_mode = 2
+
+[node name="NotificationPanel" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(250, 60)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -390.0
+offset_top = 56.0
+offset_right = -140.0
+offset_bottom = 807.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ph7vy")
+
+[node name="NotificationLabel" type="Label" parent="NotificationPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Notification text goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="GameOverPanel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -110.0
+offset_right = 160.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eykcc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Restart Level"
+
+[node name="MenuButton" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+
+[node name="MarginContainer2" type="MarginContainer" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PausePanel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -130.0
+offset_right = 140.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uw5gy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PauseLabel" type="Label" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Restart Level"
+
+[node name="MenuButton" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TransitionRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollectedItemAnimation" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -672.0
+offset_top = -392.0
+offset_right = -632.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+
+[node name="NotificationTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="GameOverPanel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GameOverPanel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="timeout" from="NotificationTimer" to="." method="_on_notification_timer_timeout"]

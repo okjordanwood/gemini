@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2llgau73eafd"]
+
+[ext_resource type="Script" path="res://scripts/light_receiver.gd" id="1_up6my"]
+
+[node name="LightReceiver" type="Area2D" groups=["light_receivers"]]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 3
+script = ExtResource("1_up6my")
+required_color = Color(0.937255, 0.752941, 0.439216, 1)

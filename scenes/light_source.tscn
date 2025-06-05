@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpwl1ejtpna02"]
+
+[ext_resource type="Script" path="res://scripts/light_source.gd" id="1_wfiyu"]
+
+[node name="LightSource" type="Node2D" groups=["light_sources"]]
+script = ExtResource("1_wfiyu")
+beam_color = Color(0.937255, 0.752941, 0.439216, 1)
+beam_angle = 45.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+exclude_parent = false
+target_position = Vector2(100, 100)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.937255, 0.752941, 0.439216, 1)
+height = 0.1
+max_distance = 200.0

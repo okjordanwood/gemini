@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://y3xut7s1i31d"]
+
+[ext_resource type="Script" path="res://scenes/level_select.gd" id="1_slo43"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4dol"]
+bg_color = Color(1, 0.992157, 0.458824, 1)
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_slo43")
+
+[node name="TopBar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="TopBarContent" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="TopBar/TopBarContent"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonScroll" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/ButtonScroll"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="ButtonGridWrapper" type="Control" parent="VBoxContainer/ButtonScroll/CenterContainer"]
+custom_minimum_size = Vector2(125, 700)
+layout_mode = 2
+
+[node name="ButtonGrid" type="GridContainer" parent="VBoxContainer/ButtonScroll/CenterContainer/ButtonGridWrapper"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 532.0
+offset_top = 208.0
+offset_right = 632.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="LevelProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -127.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 1
+theme_override_constants/outline_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_c4dol")
+value = 40.0
+
+[node name="BackToMenuButton" type="Button" parent="."]
+layout_mode = 2
+offset_right = 45.0
+offset_bottom = 40.0
+text = "Back"
+
+[connection signal="pressed" from="BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

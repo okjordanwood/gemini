@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://decv36bfadwke"]
+
+[ext_resource type="Script" path="res://scripts/time_dilation_powerup.gd" id="1_cl5o4"]
+[ext_resource type="Texture2D" uid="uid://bgiu7mbn5jlrx" path="res://assets/powerups/timePotion.png" id="2_52p42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmid8"]
+size = Vector2(8, 11)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_cl5o4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("2_52p42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cmid8")

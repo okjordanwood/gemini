@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://jvn8thh7d32u"]
+
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_ts24n"]
+[ext_resource type="Texture2D" uid="uid://es0frbdx7hnt" path="res://assets/tilemaps/Button (1).png" id="2_t8bsb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1rft"]
+atlas = ExtResource("2_t8bsb")
+region = Rect2(0, 0.25, 27, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk2cw"]
+size = Vector2(24.5371, 17.9495)
+
+[node name="Button" type="Area2D"]
+script = ExtResource("1_ts24n")
+action = null
+tile_positions = null
+tile_positions2 = null
+tile_positions3 = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Buttons"]]
+position = Vector2(846.05, 361)
+scale = Vector2(1.05185, 0.941177)
+texture = SubResource("AtlasTexture_u1rft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Buttons"]]
+position = Vector2(846, 361)
+rotation = -3.13953
+shape = SubResource("RectangleShape2D_rk2cw")
